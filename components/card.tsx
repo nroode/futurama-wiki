@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 interface Character {
   name: string;
+  id: string;
   quote: string;
   picture: string;
   href: string;
@@ -11,6 +12,7 @@ interface Character {
 
 export const Card: FunctionComponent<Character> = ({
   name,
+  id,
   quote,
   picture,
   href,

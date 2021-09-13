@@ -27,6 +27,12 @@ const Home: NextPage = ({ characters }) => {
 
   console.log(characters);
 
+  const generateSlug = (name: string) => {
+    const newSlug = name.replace(/[^a-zA-Z ]/g, '').replace(/ /g, '-').toLowerCase();
+    console.log(newSlug)
+    return newSlug;
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -42,10 +48,11 @@ const Home: NextPage = ({ characters }) => {
           {characters.map(character => (
               <CharacterCard 
                 name={character.Name}
-                key={character.Name}
+                key={generateSlug(character.Name)}
+                id={generateSlug(character.Name)}
                 quote={'Once upon a time...'}
                 picture={character.PicUrl}
-                href={'/about'}
+                href={`/about/${generateSlug(character.Name)}`}
               />
           ))}
         </CharacterGrid>
