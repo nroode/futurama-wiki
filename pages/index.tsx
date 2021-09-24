@@ -47,13 +47,13 @@ const Home: NextPage = ({ characters }: InferGetStaticPropsType<typeof getStatic
         <h1>Character Wiki</h1>
 
         <CharacterGrid>
-          {characters.map(character => (
+          {characters.map((character, i) => (
               <CharacterCard 
                 name={character.Name}
                 key={generateSlug(character.Name)}
                 id={generateSlug(character.Name)}
                 picture={character.PicUrl}
-                href={`/about/${generateSlug(character.Name)}`}
+                href={`/about/${i}`}
               />
           ))}
         </CharacterGrid>
