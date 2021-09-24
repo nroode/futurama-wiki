@@ -5,7 +5,6 @@ import styled from "styled-components";
 interface Character {
   name: string;
   id: string;
-  quote: string;
   picture: string;
   href: string;
 }
@@ -13,7 +12,6 @@ interface Character {
 export const Card: FunctionComponent<Character> = ({
   name,
   id,
-  quote,
   picture,
   href,
 }) => {
@@ -28,7 +26,6 @@ export const Card: FunctionComponent<Character> = ({
         <CardBorder>
           <CharacterImage src={picture} alt={name} />
           <Name>{name}</Name>
-          <p>{quote}</p>
         </CardBorder>
       </a>
     </Link>
@@ -37,12 +34,28 @@ export const Card: FunctionComponent<Character> = ({
 
 export default Card;
 
-const Name = styled.h3`
+const Name = styled.div`
+  color: #FFFC31;
+  background-color: #111D4A;
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  padding: 2px;
+  margin: 0px;
+  // box-shadow: 10px 5px 0px #1A2E74;
   text-transform: uppercase;
+  letter-spacing: 3px;
 `;
 
 const CardBorder = styled.div`
-  border: 10px solid black;
+  border: 10px solid #FFFC31;
+  border-radius: 30px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 5px 5px 10px black;
 `;
 
 export const CharacterCard = styled(Card)`
