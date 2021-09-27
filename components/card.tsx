@@ -50,22 +50,26 @@ const Name = styled.div`
 `;
 
 const CardBorder = styled.div`
-  border: 10px solid #FFFC31;
-  border-radius: 30px;
+  // border: 10px solid #FFFC31;
+  // border-radius: 30px;
   background-color: white;
   overflow: hidden;
   position: relative;
   box-shadow: 5px 5px 10px black;
+  height: 300px;
+  display: grid;
+  justify-items: center;
 `;
 
 export const CharacterCard = styled(Card)`
   text-align: center;
   color: red;
   background-color: red;
+  height: 300px;
 `;
 
 const CharacterImage = styled.img`
   width: 100%;
-  height: 200px;
   object-fit: cover;
+  height: 100%;
 `;
